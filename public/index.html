@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -24,11 +24,128 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Erokhina_Liga Bank</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <header class="header">
+      <nav class="header__navigation">
+        <a class="logo" href="info.html">
+          <img class="logo__image" src="" width="28" height="25" alt="Логотип Лига Банк»" />
+          <p class="logo__text"><span class="logo__text--first">Лига</span> Банк</p>
+        </a>
+
+        <ul class="site-navigation">
+          <li class="site-navigation__item"><a class="site-navigation__link" href="info.html">Услуги</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="loan.html">Рассчитать кредит</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="converter.html">Конвертер валют</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="contacts.html">Контакты</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="question.html">Задать вопрос</a></li>
+        </ul>
+
+        <ul class="user-navigation">
+          <li class="user-navigation__item"><a class="user-navigation__link" href="login.html">Войти в Интернет-банк</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="promo">
+          <p>Лига Банк</p>
+          <p>Кредиты на любой случай</p>
+          <a class="promo__link" href="loan.html">Рассчитать кредит</a>
+      </div>
+
+      <h1>Конвертер валют</h1>
+
+      <form class="converter-form">
+        <div class="converter-form__input-amount">
+          <label class="" for="input">У меня есть</label>
+          <input id="input" class="" type="number" name="input-amount" value="1000">
+          <!-- <label for="cars">Choose a car:</label>
+          <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> -->
+        </div>
+        <div class="converter-form__output-amount">
+          <label class="" for="output">Хочу приобрести</label>
+          <input id="output" class="" type="number" name="output-amount" value="13,1234">
+        </div>
+        <div class="converter-form__calendar">
+
+        </div>
+        <button class="converter-form__button" type="button"></button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__copyright copyright">
+        <a class="copyright__logo logo" href="info.html">
+          <img class="logo__image" src="" width="28" height="25" alt="Логотип Лига Банк»" />
+          <p class="logo__text"><span class="logo__text--first">Лига</span> Банк</p>
+        </a>
+        <p class="copyright__text">150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050 &#169; Лига Банк, 2019</p>        
+      </div>
+
+      <ul class="footer__navigation footer-navigation">
+        <li class="footer-navigation__item"><a class="footer-navigation__link" href="info.html">Услуги</a></li>
+        <li class="footer-navigation__item"><a class="footer-navigation__link" href="loan.html">Рассчитать кредит</a></li>
+        <li class="footer-navigation__item"><a class="footer-navigation__link" href="contacts.html">Контакты</a></li>
+        <li class="footer-navigation__item"><a class="footer-navigation__link" href="question.html">Задать вопрос</a></li>
+      </ul>
+
+      <div class="footer__contacts-mobile contacts-mobile">
+        <span class="contacts-mobile__number">&#42;0904</span>
+        <p class="contacts-mobile__text">Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+      </div>
+
+      <div class="footer__contacts contacts-main">
+        <span class="contacts-main__number">8 800 111 22 33</span>
+        <p class="contacts-main__text">Бесплатный для всех городов России</p>
+      </div>
+
+      <section class="footer__social social">
+        <h2 class="visually-hidden">Ссылки на соцсети</h2>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="https://www.facebook.com/" aria-label="Мы в Фейсбуке">
+              <span class="visually-hidden">Фейсбук</span>
+              <svg class="social__icon-facebook" width="9" height="16">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="https://www.instagram.com/" aria-label="Мы в Инстаграме">
+              <span class="visually-hidden">Инстаграм</span>
+              <svg class="social__icon-instagram" width="16" height="16">
+                <use xlink:href="img/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--twitter" href="https://twitter.com/" aria-label="Мы в Твиттере">
+              <span class="visually-hidden">Твиттер</span>
+              <svg class="social__icon-vkontakte" width="16" height="13" >
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--youtube" href="https://www.youtube.com/" aria-label="Мы на Ютюб">
+              <span class="visually-hidden">Ютюб</span>
+              <svg class="social__icon-vkontakte" width="16" height="13" >
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
