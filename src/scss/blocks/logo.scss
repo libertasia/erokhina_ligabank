@@ -1,0 +1,26 @@
+.logo {
+    display: flex;
+    align-items: baseline;
+    padding: 27px 0 39px 0;
+    margin: 0;
+    margin-right: 58px;
+  }
+
+.logo__image {
+    margin: 0;
+    margin-right: 9px;
+}
+
+.logo__text {
+    margin: 0;
+    font-family: "Work Sans", "Arial", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.17;
+    color: $basic-text-color;
+
+    &--first {
+        text-transform: uppercase;
+    }
+}

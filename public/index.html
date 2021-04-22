@@ -2,19 +2,24 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <title>Erokhina_Liga Bank</title>
+    <!-- <link rel="preload" href="%PUBLIC_URL%/fonts/oswaldmedium.woff2" type="font/woff2" as="font" crossorigin> -->
+
+
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="theme-color" content="#000000" /> -->
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,12 +29,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Erokhina_Liga Bank</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <header class="header">
+    <!-- <header class="header">
       <nav class="header__navigation">
         <a class="logo" href="info.html">
           <img class="logo__image" src="" width="28" height="25" alt="Логотип Лига Банк»" />
@@ -59,27 +63,100 @@
 
       <h1>Конвертер валют</h1>
 
-      <form class="converter-form">
-        <div class="converter-form__input-amount">
-          <label class="" for="input">У меня есть</label>
-          <input id="input" class="" type="number" name="input-amount" value="1000">
-          <!-- <label for="cars">Choose a car:</label>
-          <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select> -->
-        </div>
-        <div class="converter-form__output-amount">
-          <label class="" for="output">Хочу приобрести</label>
-          <input id="output" class="" type="number" name="output-amount" value="13,1234">
-        </div>
-        <div class="converter-form__calendar">
+      <form class="conversion-form" action="#" method="get">
+        <div class="conversion-form__input-amount currency">
+          <label class="currency__label" for="input_amount">У меня есть</label>
+          <input id="input_amount" class="currency__input" type="number" name="input_amount" value="1000">
 
+          <label for="from_currency" class="visually-hidden">Выбрать валюту</label>
+          <select class="currency__select" name="from_currency" id="from_currency">
+            <option value="RUB" selected>RUB</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBR">GBR</option>
+            <option value="CNY">CNY</option>
+          </select>
         </div>
-        <button class="converter-form__button" type="button"></button>
+
+        <div class="conversion-form__output-amount currency">
+          <label class="currency__label" for="output_amount">Хочу приобрести</label>
+          <input id="output_amount" class="currency__input" type="number" name="output_amount" value="13.1234">
+
+          <label for="to_currency" class="visually-hidden">Выбрать валюту</label>
+          <select class="currency__select" name="to_currency" id="to_currency">
+            <option value="RUB">RUB</option>
+            <option value="USD" selected>USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBR">GBR</option>
+            <option value="CNY">CNY</option>
+          </select>
+        </div>
+        <div class="conversion-form__calendar">
+          <label class="visually-hidden" for="date">Дата</label>
+          <input class="conversion-form__date" id="date" type="text" name="date" value="01/12/2020 00:00">
+        </div>
+
+        <button class="conversion-form__button button" type="button">Сохранить результат</button>
       </form>
+
+      <section class="conversion-history">
+        <h2 class="conversion-history__header">История конвертация</h2>
+
+        <ul class="conversion-history__list">
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+          <li class="conversion-history__item">
+            <time class="conversion-history__date" datetime="2020-11-25">25.11.2020</time>
+            <span class="conversion-history__input-amount">1000 RUB</span>
+            <span class="conversion-history__output-amount">13,1234 USD</span>
+          </li>
+        </ul>
+
+        <button class="conversion-history__button button" type="button">Очистить историю</button>
+      </section>
     </main>
 
     <footer class="footer">
@@ -145,7 +222,7 @@
           </li>
         </ul>
       </section>
-    </footer>
+    </footer> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
