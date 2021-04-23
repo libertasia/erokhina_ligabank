@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../img/logo.svg';
+import sprite from '../../img/sprite.svg';
 
 const ConversionScreen = () => {
   
@@ -29,11 +30,13 @@ const ConversionScreen = () => {
             <p>Кредиты на любой случай</p>
             <a className="promo__link" href="loan.html">Рассчитать кредит</a>
           </div>
-          <h1>Конвертер валют</h1>
+          <h1 className="main__header">Конвертер валют</h1>
           <form className="conversion-form" action="#" method="get">
             <div className="conversion-form__input-amount currency">
-              <label className="currency__label" htmlFor="input_amount">У меня есть</label>
-              <input id="input_amount" className="currency__input" type="number" name="input_amount" defaultValue={1000} />
+              <div className="currency__amount">
+                <label className="currency__label" htmlFor="input_amount">У меня есть</label>
+                <input id="input_amount" className="currency__input" type="number" name="input_amount" defaultValue={1000} /> 
+              </div>
               <label htmlFor="from_currency" className="visually-hidden">Выбрать валюту</label>
               <select className="currency__select" name="from_currency" id="from_currency">
                 <option value="RUB" selected>RUB</option>
@@ -44,8 +47,10 @@ const ConversionScreen = () => {
               </select>
             </div>
             <div className="conversion-form__output-amount currency">
-              <label className="currency__label" htmlFor="output_amount">Хочу приобрести</label>
-              <input id="output_amount" className="currency__input" type="number" name="output_amount" defaultValue="13.1234" />
+              <div className="currency__amount">
+                <label className="currency__label" htmlFor="output_amount">Хочу приобрести</label>
+                <input id="output_amount" className="currency__input" type="number" name="output_amount" defaultValue="13.1234" />
+              </div>
               <label htmlFor="to_currency" className="visually-hidden">Выбрать валюту</label>
               <select className="currency__select" name="to_currency" id="to_currency">
                 <option value="RUB">RUB</option>
@@ -57,12 +62,12 @@ const ConversionScreen = () => {
             </div>
             <div className="conversion-form__calendar">
               <label className="visually-hidden" htmlFor="date">Дата</label>
-              <input className="conversion-form__date" id="date" type="text" name="date" defaultValue="01/12/2020 00:00" />
+              <input className="conversion-form__date" id="date" type="text" name="date" defaultValue="1.12.2020" />
             </div>
             <button className="conversion-form__button button" type="button">Сохранить результат</button>
           </form>
           <section className="conversion-history">
-            <h2 className="conversion-history__header">История конвертация</h2>
+            <h2 className="conversion-history__header">История конвертации</h2>
             <ul className="conversion-history__list">
               <li className="conversion-history__item">
                 <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
@@ -121,7 +126,7 @@ const ConversionScreen = () => {
         <footer className="footer">
           <div className="container footer__container">
             <div className="footer__copyright copyright">
-              <a className="copyright__logo logo" href="info.html">
+              <a className="copyright__logo logo" href="info.html" >
                 <img className="logo__image" src={logo} width={28} height={25} alt="Логотип Лига Банк»" />
                 <p className="logo__text"><span className="logo__text--first">Лига</span> Банк</p>
               </a>
@@ -148,7 +153,7 @@ const ConversionScreen = () => {
                   <a className="social__link social__link--facebook" href="https://www.facebook.com/" aria-label="Мы в Фейсбуке">
                     <span className="visually-hidden">Фейсбук</span>
                     <svg className="social__icon-facebook" width={9} height={16}>
-                      <use xlinkHref="img/sprite.svg#icon-facebook" />
+                      <use href={sprite + "#icon-facebook"} />
                     </svg>
                   </a>
                 </li>
@@ -156,23 +161,23 @@ const ConversionScreen = () => {
                   <a className="social__link social__link--instagram" href="https://www.instagram.com/" aria-label="Мы в Инстаграме">
                     <span className="visually-hidden">Инстаграм</span>
                     <svg className="social__icon-instagram" width={16} height={16}>
-                      <use xlinkHref="img/sprite.svg#icon-instagram" />
+                      <use href={sprite + "#icon-instagram"} />
                     </svg>
                   </a>
                 </li>
                 <li className="social__item">
                   <a className="social__link social__link--twitter" href="https://twitter.com/" aria-label="Мы в Твиттере">
                     <span className="visually-hidden">Твиттер</span>
-                    <svg className="social__icon-vkontakte" width={16} height={13}>
-                      <use xlinkHref="img/sprite.svg#icon-vk" />
+                    <svg className="social__icon-twitter" width={16} height={13}>
+                      <use href={sprite + "#icon-twitter"} />
                     </svg>
                   </a>
                 </li>
                 <li className="social__item">
                   <a className="social__link social__link--youtube" href="https://www.youtube.com/" aria-label="Мы на Ютюб">
                     <span className="visually-hidden">Ютюб</span>
-                    <svg className="social__icon-vkontakte" width={16} height={13}>
-                      <use xlinkHref="img/sprite.svg#icon-vk" />
+                    <svg className="social__icon-youtube" width={16} height={13}>
+                      <use href={sprite + "#icon-youtube"} />
                     </svg>
                   </a>
                 </li>

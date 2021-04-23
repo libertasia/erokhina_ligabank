@@ -1,0 +1,25 @@
+.promo__link {
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.17;
+    color: $basic-text-color;
+    text-decoration: none;
+    background-color: $background-color;
+    display: flex;
+    flex-wrap: wrap;
+    width: 234px;
+    min-height: 53px;
+    margin: 0;
+    padding: 19px 36px 21px 36px;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: $basic-bright;
+        opacity: 0.3;
+    }
+    &:active {
+        color: $basic-bright;
+    }
+}

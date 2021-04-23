@@ -1,0 +1,20 @@
+.button {
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    color: $background-color;
+    text-decoration: none;
+    background-color: $basic-bright;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        opacity: 0.3;
+    }
+    &:active {
+        opacity: 0.1;
+    }
+}
