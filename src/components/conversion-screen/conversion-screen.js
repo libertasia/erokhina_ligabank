@@ -24,104 +24,113 @@ const ConversionScreen = () => {
             </ul>
           </nav>
         </header>
-        <main className="main container">
+        <main className="main">
           <div className="promo">
-            <p>Лига Банк</p>
-            <p>Кредиты на любой случай</p>
-            <a className="promo__link" href="loan.html">Рассчитать кредит</a>
+            <div className="container promo__container">
+              <p className="promo__bank-title">Лига Банк</p>
+              <p className="promo__text">Кредиты на любой случай</p>
+              <a className="promo__link" href="loan.html">Рассчитать кредит</a> 
+            </div>
           </div>
-          <h1 className="main__header">Конвертер валют</h1>
-          <form className="conversion-form" action="#" method="get">
-            <div className="conversion-form__input-amount currency">
-              <div className="currency__amount">
-                <label className="currency__label" htmlFor="input_amount">У меня есть</label>
-                <input id="input_amount" className="currency__input" type="number" name="input_amount" defaultValue={1000} /> 
+          <div className="container">
+            <h1 className="main__header">Конвертер валют</h1>
+            <form className="conversion-form" action="#" method="get">
+              <div className="conversion-form__input-amount currency">
+                <div className="currency__amount">
+                  <label className="currency__label" htmlFor="input_amount">У меня есть</label>
+                  <input id="input_amount" className="currency__input" type="number" name="input_amount" defaultValue={1000} /> 
+                </div>
+                <label htmlFor="from_currency" className="visually-hidden">Выбрать валюту</label>
+                <select className="currency__select" name="from_currency" id="from_currency">
+                  <option value="RUB" selected>RUB</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBR">GBR</option>
+                  <option value="CNY">CNY</option>
+                </select>
               </div>
-              <label htmlFor="from_currency" className="visually-hidden">Выбрать валюту</label>
-              <select className="currency__select" name="from_currency" id="from_currency">
-                <option value="RUB" selected>RUB</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBR">GBR</option>
-                <option value="CNY">CNY</option>
-              </select>
-            </div>
-            <div className="conversion-form__output-amount currency">
-              <div className="currency__amount">
-                <label className="currency__label" htmlFor="output_amount">Хочу приобрести</label>
-                <input id="output_amount" className="currency__input" type="number" name="output_amount" defaultValue="13.1234" />
+              <div className="conversion-form__output-amount currency">
+                <div className="currency__amount">
+                  <label className="currency__label" htmlFor="output_amount">Хочу приобрести</label>
+                  <input id="output_amount" className="currency__input" type="number" name="output_amount" defaultValue="13.1234" />
+                </div>
+                <label htmlFor="to_currency" className="visually-hidden">Выбрать валюту</label>
+                <select className="currency__select" name="to_currency" id="to_currency">
+                  <option value="RUB">RUB</option>
+                  <option value="USD" selected>USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBR">GBR</option>
+                  <option value="CNY">CNY</option>
+                </select>
               </div>
-              <label htmlFor="to_currency" className="visually-hidden">Выбрать валюту</label>
-              <select className="currency__select" name="to_currency" id="to_currency">
-                <option value="RUB">RUB</option>
-                <option value="USD" selected>USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBR">GBR</option>
-                <option value="CNY">CNY</option>
-              </select>
-            </div>
-            <div className="conversion-form__calendar">
-              <label className="visually-hidden" htmlFor="date">Дата</label>
-              <input className="conversion-form__date" id="date" type="text" name="date" defaultValue="1.12.2020" />
-            </div>
-            <button className="conversion-form__button button" type="button">Сохранить результат</button>
-          </form>
-          <section className="conversion-history">
-            <h2 className="conversion-history__header">История конвертации</h2>
-            <ul className="conversion-history__list">
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-              <li className="conversion-history__item">
-                <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
-                <span className="conversion-history__input-amount">1000 RUB</span>
-                <span className="conversion-history__output-amount">13,1234 USD</span>
-              </li>
-            </ul>
-            <button className="conversion-history__button button" type="button">Очистить историю</button>
-          </section>
+              {/* <div className="conversion-form__calendar flatpickr">
+                <label className="visually-hidden" htmlFor="date">Дата</label>
+                <input className="conversion-form__date" id="date" type="text" name="date" defaultValue="1.12.2020" />
+                <span className="conversion-form__icon-calendar" type="button"></span>
+              </div> */}
+              <div className="conversion-form__calendar">
+                <label className="visually-hidden" htmlFor="date">Дата</label>
+                <input className="conversion-form__date" id="date" type="text" name="date" defaultValue="1.12.2020" />
+              </div> 
+              <button className="conversion-form__button button" type="button">Сохранить результат</button>
+            </form>
+            <section className="conversion-history">
+              <h2 className="conversion-history__header">История конвертации</h2>
+              <ul className="conversion-history__list">
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+                <li className="conversion-history__item">
+                  <time className="conversion-history__date" dateTime="2020-11-25">25.11.2020</time>
+                  <span className="conversion-history__input-amount">1000 RUB</span>
+                  <span className="conversion-history__output-amount">13,1234 USD</span>
+                </li>
+              </ul>
+              <button className="conversion-history__button button" type="button">Очистить историю</button>
+            </section>
+          </div>
         </main>
         <footer className="footer">
           <div className="container footer__container">

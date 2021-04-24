@@ -8,14 +8,14 @@
 
 .user-navigation__item {
     list-style: none;
-    margin: 40px 0;
+    margin: 40px 0 34px 0;
     position: relative;
 
     &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: -42px;
+    top: -2px;
+    left: -31px;
     width: 20px;
     height: 22px;
     background-image: url("../../img/login.svg");

@@ -15,7 +15,7 @@
 
 .currency__label {
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     width: 390px;
     font-weight: 500;
     font-size: 22px;
@@ -59,4 +59,9 @@
     font-family: inherit;
     line-height: 1.4;
     text-align: center;
+    appearance: none;
+    padding-left: 18px;
+    background-image: url(../../img/select-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 84px 25px; 
 }

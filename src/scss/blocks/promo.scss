@@ -1,3 +1,51 @@
+.promo {
+    min-height: 400px;
+    // background: #2C36F2;
+    background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%),
+                linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%),
+                linear-gradient(to top, #2C36F2 0%, #2C36F2 100%),
+                linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%),
+                linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%);
+    //background-size: 11% 100%, 11% 100%, 36% 100%, 20% 100%, 22% 100%;
+    background-size: 11% 100%, 22% 100%, 58% 100%, 78% 100%, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.promo__container {
+    min-height: 400px;
+    background-image: url("../../img/cards@1x.png");
+    background-size: 444px 286px;
+    background-repeat: no-repeat;
+    background-position: 698px 60px;
+    @media (min-resolution: 2dppx) {
+        background-image: url("../../img/cards@2x.png");
+        background-size: 444px 286px;
+      }
+}
+
+.promo__bank-title {
+    font-weight: 700;
+    font-size: 54px;
+    color: $background-color;
+    padding-left: 170px;
+    padding-top: 102px;
+    padding-bottom: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.promo__text {
+    font-weight: 400;
+    font-size: 22px;
+    color: $light;
+    padding-left: 170px;
+    padding-top: 0;
+    padding-right: 559px;
+    padding-bottom: 0;
+    margin: 0;
+    margin-bottom: 34px;
+}
+
 .promo__link {
     border-radius: 4px;
     font-weight: 500;
@@ -11,7 +59,8 @@
     width: 234px;
     min-height: 53px;
     margin: 0;
-    padding: 19px 36px 21px 36px;
+    margin-left: 170px;
+    padding: 15px 36px 17px 36px;
     justify-content: center;
     align-items: center;
 
