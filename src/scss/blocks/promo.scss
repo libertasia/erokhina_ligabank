@@ -1,12 +1,11 @@
 .promo {
     min-height: 400px;
-    // background: #2C36F2;
-    background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%),
+    background-color: $basic-bright;
+    background-image: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%),
                 linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%),
                 linear-gradient(to top, #2C36F2 0%, #2C36F2 100%),
-                linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%),
-                linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%);
-    //background-size: 11% 100%, 11% 100%, 36% 100%, 20% 100%, 22% 100%;
+                linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%),
+                linear-gradient(180.24deg, rgba(32, 39, 179, 0) 32.89%, #2027B3 99.79%);
     background-size: 11% 100%, 22% 100%, 58% 100%, 78% 100%, 100% 100%;
     background-repeat: no-repeat;
 }

@@ -10,7 +10,7 @@ import {Router as BrowserRouter} from 'react-router-dom';
 import App from './components/app/app';
 import rootReducer from './store/root-reducer';
 import {createAPI} from './services/api';
-import {getExchangeRate} from './store/api-actions';
+import {fetchExchangeRate} from './store/api-actions';
 
 
 const api = createAPI();
@@ -22,7 +22,7 @@ const store = createStore(
   )
 );
 
-store.dispatch(getExchangeRate());
+store.dispatch(fetchExchangeRate());
 
 ReactDOM.render(
   <Provider store={store}>

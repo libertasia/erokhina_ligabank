@@ -7,8 +7,7 @@ const formatDate = (date) => {
   return date.toISOString().split('T')[0]
 }
 
-export const getExchangeRate = (fromCurrency = `RUB`, toCurrency = `USD`, date = new Date()) => (dispatch, _getState, api) => {
-  //dispatch(ActionCreator.setIsFilmsListLoading(true));
+export const fetchExchangeRate = (fromCurrency = `RUB`, toCurrency = `USD`, date = new Date()) => (dispatch, _getState, api) => {
   const qParam = `${fromCurrency}_${toCurrency}`;
   const dateString = formatDate(date);
   return api.get(APIRoute.CONVERT, {

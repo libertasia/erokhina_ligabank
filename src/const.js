@@ -16,7 +16,7 @@ const Currency = {
     RUB: `RUB`,
     USD: `USD`,
     EUR: `EUR`,
-    GBR: `GBR`,
+    GBP: `GBP`,
     CNY: `CNY`,
 }
 
