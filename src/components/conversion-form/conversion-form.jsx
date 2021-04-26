@@ -13,7 +13,7 @@ const availableCurrencies = [Currency.RUB, Currency.USD, Currency.EUR, Currency.
 const generateCurrencyOptionMarkup = () => {
   return availableCurrencies.map((currency) =>
     <option value={currency} key={`currency-${currency}`}>{currency}</option>
-    );
+  );
 };
 
 const roundToFourDecimals = (num) => {
@@ -28,6 +28,7 @@ const ConversionForm = (props) => {
   const [conversionDate, setConversionDate] = useState(new Date())
   const [haveCurrency, setHaveCurrency] = useState(Currency.RUB)
   const [needCurrency, setNeedCurrency] = useState(Currency.USD)
+  const [canSave, setCanSave] = useState(true);
 
   useEffect(() => {
     setNeedAmount(roundToFourDecimals(haveAmount * exchangeRate));
@@ -39,13 +40,25 @@ const ConversionForm = (props) => {
 
 
   const onHaveAmountChange = (evt) => {
-    setHaveAmount(parseInt(evt.target.value));
-    setNeedAmount(roundToFourDecimals(parseInt(evt.target.value) * exchangeRate));
+    if (evt.target.value === "") {
+      setCanSave(false)
+    }
+    else {
+      setCanSave(true)
+    }
+    setHaveAmount(evt.target.value);
+    setNeedAmount(roundToFourDecimals(parseFloat(evt.target.value) * exchangeRate));
   };
 
   const onNeedAmountChange = (evt) => {
-    setNeedAmount(parseInt(evt.target.value));
-    setHaveAmount(roundToFourDecimals(parseInt(evt.target.value) / exchangeRate));
+    if (evt.target.value === "") {
+      setCanSave(false)
+    }
+    else {
+      setCanSave(true)
+    }
+    setNeedAmount(evt.target.value);
+    setHaveAmount(roundToFourDecimals(parseFloat(evt.target.value) / exchangeRate));
   };
 
   const onHaveCurrencyChange = (evt) => {
@@ -63,7 +76,7 @@ const ConversionForm = (props) => {
   };
 
   const onSaveResultClick = () => {
-    onSaveResult(haveAmount, needAmount, haveCurrency, needCurrency, conversionDate)
+    onSaveResult(parseFloat(haveAmount), parseFloat(needAmount), haveCurrency, needCurrency, conversionDate)
   };
 
   return (
@@ -101,7 +114,7 @@ const ConversionForm = (props) => {
             minDate: new Date().fp_incr(-7)
           }}/>
         </div> 
-        <button className="conversion-form__button button" type="button" onClick={onSaveResultClick}>Сохранить результат</button>
+        <button className="conversion-form__button button" type="button" disabled={!canSave} onClick={onSaveResultClick}>Сохранить результат</button>
       </form>
     </React.Fragment>
   );
