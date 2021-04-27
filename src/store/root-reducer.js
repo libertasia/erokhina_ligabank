@@ -1,5 +1,7 @@
 import {ActionType} from './action';
 
+const MAX_HISTORY_ITEMS_NUMBER = 10;
+
 const initialState = {
   conversionHistory: [],
   exchangeRate: 1,
@@ -10,7 +12,7 @@ const rootReducer = (state = initialState, action) => {
     case ActionType.SAVE_RESULT:
       return {
         ...state,
-        conversionHistory: [...state.conversionHistory, action.payload].slice(-10),
+        conversionHistory: [...state.conversionHistory, action.payload].slice(-MAX_HISTORY_ITEMS_NUMBER),
       };
     case ActionType.CLEAR_HISTORY:
       return {

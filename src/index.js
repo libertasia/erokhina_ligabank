@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
 import browserHistory from "./browser-history";
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
@@ -16,27 +15,19 @@ import {fetchExchangeRate} from './store/api-actions';
 const api = createAPI();
 
 const store = createStore(
-  rootReducer,
-  composeWithDevTools(
-    applyMiddleware(thunk.withExtraArgument(api))
-  )
+    rootReducer,
+    composeWithDevTools(
+        applyMiddleware(thunk.withExtraArgument(api))
+    )
 );
 
 store.dispatch(fetchExchangeRate());
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter history={browserHistory}>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}>
+      <BrowserRouter history={browserHistory}>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById(`root`)
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

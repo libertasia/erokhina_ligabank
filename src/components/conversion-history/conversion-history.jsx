@@ -10,9 +10,11 @@ const ConversionHistory = (props) => {
   const generateHistoryMarkup = (history) => {
     return history.map((item, index) =>
       <li className="conversion-history__item" key={`history-item-${index}`}>
-        <time className="conversion-history__date" dateTime={item.conversionDate}>{item.conversionDate.toLocaleDateString('ru-RU')}</time>
-        <span className="conversion-history__input-amount">{item.haveAmount} {item.haveCurrency}</span>
-        <span className="conversion-history__output-amount">{item.needAmount} {item.needCurrency}</span>
+        <time className="conversion-history__date" dateTime={item.conversionDate}>{item.conversionDate.toLocaleDateString(`ru-RU`)}</time>
+        <div className="conversion-history__amount">
+          <span className="conversion-history__input-amount">{item.haveAmount} {item.haveCurrency}</span>
+          <span className="conversion-history__output-amount">{item.needAmount} {item.needCurrency}</span>
+        </div>
       </li>
     );
   };
@@ -23,13 +25,13 @@ const ConversionHistory = (props) => {
 
   return (
     <React.Fragment>
-        <section className="conversion-history">
-            <h2 className="conversion-history__header">История конвертации</h2>
-            <ul className="conversion-history__list">
-              {generateHistoryMarkup(conversionHistory)}
-            </ul>
-            <button className="conversion-history__button button" type="button" onClick={onClearHistoryClick}>Очистить историю</button>
-        </section>
+      <section className="conversion-history">
+        <h2 className="conversion-history__header">История конвертации</h2>
+        <ul className="conversion-history__list">
+          {generateHistoryMarkup(conversionHistory)}
+        </ul>
+        <button className="conversion-history__button button" type="button" onClick={onClearHistoryClick}>Очистить историю</button>
+      </section>
     </React.Fragment>
   );
 };
