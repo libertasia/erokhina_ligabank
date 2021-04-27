@@ -1,3 +1,5 @@
 # Грейдирование (React)
+ 
+Currency Converter
 
-Студент: Anastasiia Erokhina
+made by Anastasiia Erokhina
